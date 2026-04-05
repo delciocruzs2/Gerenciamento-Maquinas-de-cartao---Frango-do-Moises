@@ -1,0 +1,57 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 11vh;
+    width: 100%;
+}
+
+main nav ul {
+    height: 100%;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content:flex-end;
+}
+
+main nav ul li {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 6vh;
+}
+
+main nav ul li a {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+}
+
+main nav ul li a:hover {
+    transform: scale(1.1); 
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+main nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main nav ul li a span {
+    font-size: 0.6rem; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 980;
+    text-align: center;
+    margin-top: 0vh;
+    color: black;
+}

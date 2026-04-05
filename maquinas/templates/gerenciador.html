@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'maquinas/css/gerenciador.css' %}">
+{% endblock extra_css %}
+
+{% block title %} Gerenciador Maquininhas {% endblock title %}
+
+{% block content %}
+<main>
+    <nav>
+        <ul>
+            <li>
+                <a href="">
+                    <img src="{% static 'maquinas/img/financeiro.png' %}" alt="Financeiro">
+                    <span>Financeiro</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="{% static 'maquinas/img/adicionar_maquina.png' %}" alt="Adicionar">
+                    <span>Adicionar</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="{% static 'maquinas/img/atualizar2.png' %}" alt="Atualizar">
+                    <span>Atualizar</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="{% static 'maquinas/img/deletar.png' %}" alt="excluir">
+                    <span>Excluir</span>
+                </a>
+            </li>           
+        </ul>
+    </nav>
+</main>
+{% endblock content %}

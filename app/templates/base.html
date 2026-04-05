@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Base {% endblock title %} </title>
+    <link rel="shortcut icon" href="{% static 'app/img/maquina-de-cartão.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href=" {% static 'app/css/base.css' %} ">
+    {% block extra_css %}
+    {% endblock extra_css %}
+</head>
+<body>
+    {% block header %}
+    <header>
+        <img src="{% static 'app/img/menu-quadrado.png' %}" id="open-btn" alt="Menu">
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <span id="close-btn">&times;</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href=" {% url 'gerenciador_maquinas' %} ">+Máquininha</a></li>
+                <li><a href="#">+Lançamento </a></li>
+            </ul>
+        </nav>
+    </header>
+    {% endblock header %}
+    {% block content %}
+    <main>
+
+    </main>
+      
+    {% endblock content %}
+    {% block footer %}
+    <footer>
+
+    </footer>
+    {% endblock footer %}
+
+    <script src="{% static 'app/javascript/menu.js' %}"></script>
+</body>
+</html>
