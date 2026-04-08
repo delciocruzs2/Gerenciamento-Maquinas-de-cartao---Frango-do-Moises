@@ -21,21 +21,43 @@
                 <a href=" {% url "adicionar_maquinas" %} ">
                     <img src="{% static 'maquinas/img/adicionar_maquina.png' %}" alt="Adicionar">
                     <span>Adicionar</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="{% static 'maquinas/img/atualizar2.png' %}" alt="Atualizar">
-                    <span>Atualizar</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="{% static 'maquinas/img/deletar.png' %}" alt="excluir">
-                    <span>Excluir</span>
-                </a>
-            </li>           
+                </a>        
         </ul>
     </nav>
+    <section class="container_maquinas">
+    {% for maquina in maquinas %}
+        <article class="card_maquina">
+            <div class="div_img_card">
+                {% if maquina.imagem_maquina %}
+                    <img src="{{ maquina.imagem_maquina.url }}" alt="{{ maquina.nome_maquina }}">
+                {% else %}
+                    <img src="{% static 'maquinas/img/placeholder.png' %}" alt="Sem imagem">
+                {% endif %}
+            </div>
+            <div class="info_card">
+                <h3>{{ maquina.nome_maquina }}</h3>
+                <p>Limite: R$ {{ maquina.valor_limite }}</p>
+            </div>
+            <div id="opcao_gerenciamento">
+                <ul>
+                    <li>
+                        <a href="{% url 'atualizar_maquina' maquina.id_maquina %}">
+                        <img src="{% static 'maquinas/img/atualizar2.png' %}" alt="Editar">
+                        <span>Editar</span>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{% static 'maquinas/img/deletar.png' %}" alt="Excluir">
+                            <span>Excluir</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    {% empty %}
+        <p>Nenhuma maquininha cadastrada ainda.</p>
+    {% endfor %}
+</section>
 </main>
 {% endblock content %}

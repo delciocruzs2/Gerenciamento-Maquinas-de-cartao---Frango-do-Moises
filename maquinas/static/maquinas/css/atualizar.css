@@ -1,0 +1,125 @@
+/* Geral */
+* {
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Formulario Principal */
+main form {
+    padding: 1vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;    
+    min-height: 70vh;
+    width: 70%;
+}
+
+/* Secao da Imagem */
+#img_maquininha {
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    border-radius: 5px;    
+    height: 60vh;
+    width: 50%;
+}
+
+#img_maquininha img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Secao dos Campos e Fieldset */
+#forms_maquininha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;    
+    height: 60vh;
+    width: 40%;
+}
+
+#forms_maquininha fieldset {
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.3);
+    padding: 3vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    height: auto;
+    width: 95%;
+}
+
+#forms_maquininha fieldset legend {
+    font-family: 'Arial Black', sans-serif; 
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+/* Divs de Valores e Inputs */
+.div_valores {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    overflow: hidden;
+}
+
+.div_valores a, 
+.div_valores br,
+.div_valores input[type="checkbox"],
+.div_valores label[for="imagem_maquina-clear_id"] {
+    display: none !important;
+}
+
+input[type="file"] {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Botoes de Acao */
+#botao_confirmar {
+    width: 95%;
+    height: 8vh;
+    margin-top: 2vh;
+}
+
+#botao_confirmar button {
+    border: none;
+    outline: none;
+    padding: 2vh;
+    width: 100%;
+    background-color: rgb(87, 87, 87);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 7px;
+}
+
+#botao_voltar {
+    width: 95%;
+    height: 8vh;
+    margin-top: 2vh;
+}
+
+#botao_voltar button {
+    border: none;
+    outline: none;
+    color: white;
+    padding: 2vh;
+    width: 100%;
+    background-color: rgb(160, 159, 159);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+}

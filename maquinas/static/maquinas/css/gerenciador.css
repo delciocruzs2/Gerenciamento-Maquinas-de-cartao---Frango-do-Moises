@@ -55,3 +55,107 @@ main nav ul li a span {
     margin-top: 0vh;
     color: black;
 }
+
+/* CSS DE CARDS*/
+
+.container_maquinas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vh;
+    padding: 4vh;
+    min-height: 70vh;
+}
+
+/* O card de cada maquininha */
+.card_maquina {
+    background-color: white;
+    border-radius: 12px;
+    width: 40vh;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.card_maquina:hover {
+    transform: translateY(-10px); /* Efeito de flutuar ao passar o mouse */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.div_img_card {
+    width: 100%;
+    height: 25vh;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+}
+
+.div_img_card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info_card {
+    padding: 4vh;
+    text-align: center;
+}
+
+.info_card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.info_card p {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 1vh;
+}
+
+#opcao_gerenciamento {
+    border-top: 1px solid #eee; /* Uma linha fina para separar do conteúdo acima */
+    padding: 1vh 0;
+    background-color: #f9f9f9; /* Um fundo levemente diferente para destacar a base */
+}
+
+#opcao_gerenciamento ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Distribui Editar e Excluir */
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#opcao_gerenciamento ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+#opcao_gerenciamento ul li a:hover {
+    transform: scale(1.1);
+}
+
+/* AQUI ESTÁ O SEGREDO DO TAMANHO */
+#opcao_gerenciamento ul li a img {
+    width: 30px;  /* Ajuste esse valor conforme o seu gosto */
+    height: 30px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+#opcao_gerenciamento ul li a span {
+    font-size: 0.7rem;
+    color: #555;
+    font-weight: bold;
+}

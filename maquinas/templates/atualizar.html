@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'maquinas/css/atualizar.css' %}">
+{% endblock extra_css %}
+
+{% block title %} Atualizar Maquininha {% endblock title %}
+
+{% block content %}
+<main>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <section id="img_maquininha">
+            <img id="preview" 
+                 src="{% if maquina.imagem_maquina %}{{ maquina.imagem_maquina.url }}{% else %}{% static 'maquinas/img/placeholder.png' %}{% endif %}" 
+                 alt="Preview da Maquininha">
+            
+            <span id="placeholder_text" style="display: none;">Sua Imagem aparecerá aqui</span>
+        </section>
+
+        <section id="forms_maquininha">
+            <fieldset>
+                <legend class="format_text">Atualizar Maquininha</legend>
+                
+                <div class="div_valores">
+                    <span>Atualizar nome</span>
+                    {{ form_atualizar.nome_maquina }}
+                    {% if form_atualizar.nome_maquina.errors %}
+                        <small style="color: red;">{{ form_atualizar.nome_maquina.errors }}</small>
+                    {% endif %}
+                </div>
+
+                <div class="div_valores">
+                    <span>Atualizar limite</span>
+                    {{ form_atualizar.valor_limite }}
+                    {% if form_atualizar.valor_limite.errors %}
+                        <small style="color: red;">{{ form_atualizar.valor_limite.errors }}</small>
+                    {% endif %}
+                </div>
+
+                <div class="div_valores">
+                    <span>Atualizar imagem</span>
+                    {{ form_atualizar.imagem_maquina }}
+                </div>
+            </fieldset>
+
+            <div id="botao_confirmar">
+                <button type="submit">Salvar Alterações</button>
+            </div>
+
+            <div id="botao_voltar">
+                <a href="{% url 'gerenciador_maquinas' %}" style="text-decoration: none;">
+                    <button type="button">Cancelar</button> 
+                </a>
+            </div>
+        </section>
+    </form>
+</main>
+
+<script src="{% static 'maquinas/javascript/mostrar_imagem.js' %}"></script>
+{% endblock content %}
