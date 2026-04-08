@@ -47,7 +47,7 @@
                     </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="javascript:void(0)" onclick="confirmar_exclusao('{{ maquina.id_maquina }}', '{{ maquina.nome_maquina }}')">
                             <img src="{% static 'maquinas/img/deletar.png' %}" alt="Excluir">
                             <span>Excluir</span>
                         </a>
@@ -59,5 +59,6 @@
         <p>Nenhuma maquininha cadastrada ainda.</p>
     {% endfor %}
 </section>
+<script src="{% static 'maquinas/javascript/confirmar_exclusao.js' %}"></script>
 </main>
 {% endblock content %}

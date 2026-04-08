@@ -45,3 +45,10 @@ class Atualizar_Maquina_View(View):
         else:
             print(form.errors)
         return render(request, 'atualizar.html', {'form_atualizar': form, 'maquina': maquina})
+    
+
+class Deletar_Maquina_View(View):
+    def get(self, request, id:int) -> None:
+        objeto_escolhido = get_object_or_404(Maquinas_Model, id_maquina = id)
+        objeto_escolhido.delete()
+        return redirect('gerenciador_maquinas')
