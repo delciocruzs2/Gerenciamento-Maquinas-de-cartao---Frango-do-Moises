@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'maquinas/css/adicionar.css' %}">
+{% endblock extra_css %}
+
+{% block title %} Adicionar maquininha {% endblock title %}
+
+{% block content %}
+<main>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <section id="img_maquininha">
+            <img id="preview" src="{% static 'maquinas/img/placeholder.png' %}" alt="Preview">    
+            <span id="placeholder_text" style="display: none;">Sua Imagem aparecerá aqui</span>
+        </section>
+        <section id="forms_maquininha">
+            <fieldset>
+            <legend class="format_text">Nova Maquininha</legend>
+                <div class="div_valores">
+                    <span>Nome da máquininha</span>
+                    {{ form_adicionar.nome_maquina }}
+                </div>
+                <div class="div_valores">
+                    <span>Valor limite</span>
+                    {{ form_adicionar.valor_limite }}
+                    {{ form_adicionar.valor_limite.errors }}
+                </div>
+                <div class="div_valores">
+                    <span>Imagem da maquininha</span>
+                    {{ form_adicionar.imagem_maquina }}
+                </div>
+            </fieldset>
+            <div id="botao_confirmar">
+                <button type="submit">Confirmar</button>
+            </div>
+            <div id="botao_voltar">
+                <a href="{% url 'home' %}" style="text-decoration: none;">
+                <button type="button">Voltar</button> 
+                </a>
+            </div>
+        </section>
+        
+    </form>
+</main>
+<script src="{% static 'maquinas/javascript/mostrar_imagem.js' %}"></script>
+{% endblock content %}
