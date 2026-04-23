@@ -1,0 +1,109 @@
+.container-home {
+    padding: 4vh 5%;
+}
+
+.grid-maquinas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vh;
+    justify-content: center;
+}
+
+.card-maquina {
+    background: #fff;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.card-topo {
+    height: 18vh;
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.card-topo img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-info {
+    padding: 3vh;
+}
+
+.card-info h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5vh;
+    margin-bottom: 2vh;
+}
+
+.v-box span {
+    font-size: 0.75rem;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+}
+
+.v-box strong {
+    font-size: 1rem;
+    color: #333;
+}
+
+.disponivel {
+    grid-column: span 2;
+    border-top: 1px dotted #eee;
+    padding-top: 1vh;
+}
+
+.txt-verde {
+    color: #28a745 !important;
+}
+
+.txt-vermelho {
+    color: #FF0000 !important;
+}
+
+.barra-trilho {
+    width: 100%;
+    background: #f0f0f0;
+    height: 14px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.barra-nivel {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 1.5s ease-in-out;
+}
+
+.progresso-legenda {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #666;
+    margin-top: 1vh;
+}
+
+.card-links {
+    border-top: 1px solid #f5f5f5;
+    padding: 2vh;
+    text-align: center;
+}
+
+.card-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 800;
+    font-size: 0.9rem;
+}

@@ -64,7 +64,7 @@ main nav ul li a span {
     justify-content: center;
     gap: 3vh;
     padding: 4vh;
-    min-height: 70vh;
+    min-height: 65vh;
 }
 
 /* O card de cada maquininha */
@@ -112,7 +112,8 @@ main nav ul li a span {
 }
 
 .info_card p {
-    color: #28a745;
+    font-size: 0.9rem;
+    color: #151615;
     font-weight: bold;
     margin-top: 1vh;
 }

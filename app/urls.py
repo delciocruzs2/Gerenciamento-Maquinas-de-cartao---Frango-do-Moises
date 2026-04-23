@@ -5,9 +5,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('',Home_View.as_view(), name='home'),
     path('v1/maquinas/', include('maquinas.urls')),
+    path('v1/transacao/', include('transacao.urls') )
 
 ]
 

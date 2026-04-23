@@ -12,16 +12,11 @@
     <nav>
         <ul>
             <li>
-                <a href="">
-                    <img src="{% static 'maquinas/img/financeiro.png' %}" alt="Financeiro">
-                    <span>Financeiro</span>
-                </a>
-            </li>
-            <li>
                 <a href=" {% url "adicionar_maquinas" %} ">
                     <img src="{% static 'maquinas/img/adicionar_maquina.png' %}" alt="Adicionar">
                     <span>Adicionar</span>
-                </a>        
+                </a>  
+            </li>      
         </ul>
     </nav>
     <section class="container_maquinas">
@@ -36,15 +31,22 @@
             </div>
             <div class="info_card">
                 <h3>{{ maquina.nome_maquina }}</h3>
+                <p>Vencimento(dia): {{ maquina.dia_vencimento }}</p>
                 <p>Limite: R$ {{ maquina.valor_limite }}</p>
             </div>
             <div id="opcao_gerenciamento">
                 <ul>
                     <li>
+                        <a href=" {% url 'financeiro_maquina' maquina.id_maquina %} ">
+                            <img src="{% static 'maquinas/img/financeiro.png' %}" alt="Financeiro">
+                            <span>Financeiro</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{% url 'atualizar_maquina' maquina.id_maquina %}">
-                        <img src="{% static 'maquinas/img/atualizar2.png' %}" alt="Editar">
-                        <span>Editar</span>
-                    </a>
+                            <img src="{% static 'maquinas/img/atualizar2.png' %}" alt="Editar">
+                            <span>Editar</span>
+                        </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)" onclick="confirmar_exclusao('{{ maquina.id_maquina }}', '{{ maquina.nome_maquina }}')">

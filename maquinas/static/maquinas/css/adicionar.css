@@ -42,8 +42,9 @@ main form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;    
-    height: 60vh;
+    border-radius: 5px;
+    height: auto;
+    min-height: 60vh;
     width: 40%;
 }
 
@@ -53,7 +54,8 @@ main form {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    height: 44vh;
+    min-height: 44vh;
+    height: auto;
     width: 95%;
 }
 
@@ -72,7 +74,7 @@ main form {
 
 #botao_confirmar {
     width: 95%;
-    height: 8vh;
+    height: auto;
     margin-top: 2vh;
 }
 
@@ -89,7 +91,7 @@ main form {
 
 #botao_voltar {
     width: 95%;
-    height: 8vh;
+    height: auto;
     margin-top: 2vh;
 }
 #botao_voltar button {

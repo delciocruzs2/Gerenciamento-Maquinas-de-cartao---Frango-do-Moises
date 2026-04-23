@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'app/css/home.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<main class="container-home">
+    <section class="grid-maquinas">
+        {% for m in maquinas %}
+        <div class="card-maquina">
+            <div class="card-topo">
+                {% if m.imagem_maquina %}
+                    <img src="{{ m.imagem_maquina.url }}" alt="{{ m.nome_maquina }}">
+                {% else %}
+                    <img src="{% static 'app/img/placeholder.png' %}" alt="Máquina">
+                {% endif %}
+            </div>
+
+            <div class="card-info">
+                <h2 class="format_text">{{ m.nome_maquina }}</h2>
+                
+                <div class="valores-grid">
+                    <div class="v-box">
+                        <span>LIMITE:</span>
+                        <strong>R$ {{ m.valor_limite|floatformat:2 }}</strong>
+                    </div>
+                    <div class="v-box">
+                        <span>LANÇADOS:</span>
+                        <strong>R$ {{ m.total_gasto|floatformat:2 }}</strong>
+                    </div>
+                    <div class="v-box disponivel">
+                        <span>DISPONÍVEL ANTES DE CHEGAR AO LIMITE:</span>
+                        <strong class="{% if m.valor_disponivel < 0 %}txt-vermelho{% else %}txt-verde{% endif %}">
+                            R$ {{ m.valor_disponivel|floatformat:2 }}
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="progresso-wrapper">
+                    <div class="barra-trilho">
+                        <div class="barra-nivel" 
+                             style="width: {{ m.porcentagem_barra|stringformat:'.2f' }}%; background-color: {{ m.cor_barra }};">
+                        </div>
+                    </div>
+                    <div class="progresso-legenda">
+                        <span>Vencimento: {{ m.dia_vencimento }}</span>
+                        <span>{{ m.porcentagem|floatformat:0 }}%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-links">
+                <a href="{% url 'financeiro_maquina' m.pk %}">LANÇAMENTOS</a>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock content %}

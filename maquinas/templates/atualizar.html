@@ -27,21 +27,22 @@
                 <div class="div_valores">
                     <span>Atualizar nome</span>
                     {{ form_atualizar.nome_maquina }}
-                    {% if form_atualizar.nome_maquina.errors %}
-                        <small style="color: red;">{{ form_atualizar.nome_maquina.errors }}</small>
-                    {% endif %}
+                    {{ form_atualizar.nome_maquina.errors }}
                 </div>
 
                 <div class="div_valores">
                     <span>Atualizar limite</span>
                     {{ form_atualizar.valor_limite }}
-                    {% if form_atualizar.valor_limite.errors %}
-                        <small style="color: red;">{{ form_atualizar.valor_limite.errors }}</small>
-                    {% endif %}
+                    {{ form_atualizar.valor_limite.errors }}
                 </div>
 
                 <div class="div_valores">
-                    <span>Atualizar imagem</span>
+                    <span>Atualizar vencimento</span>
+                    {{ form_atualizar.dia_vencimento }}
+                    {{ form_atualizar.dia_vencimento.errors }}
+                </div>
+
+                <div class="div_valores">
                     {{ form_atualizar.imagem_maquina }}
                 </div>
             </fieldset>

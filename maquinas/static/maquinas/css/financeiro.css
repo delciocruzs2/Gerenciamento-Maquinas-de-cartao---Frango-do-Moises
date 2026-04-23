@@ -1,0 +1,104 @@
+/* Sessao: Layout Geral */
+.container-financeiro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 2%;
+    min-height: 85vh;
+    width: 100%;
+}
+
+/* Sessao: Cabecalho do Extrato */
+.header-extrato {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vh;
+    padding: 0 1%;
+}
+
+.header-extrato h1 {
+    color: #eae7e7 ;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.btn-voltar {
+    text-decoration: none;
+    color: #eae7e7;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+/* Sessao: Tabela e Card Principal */
+.secao-tabela {
+    width: 100%;
+}
+
+.card-extrato {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    padding: 2vh;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th {
+    text-align: left;
+    padding: 2vh 1.5%;
+    border-bottom: 2px solid #575757;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+td {
+    padding: 2vh 1.5%;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+/* Sessao: Estilos de Celula */
+.valor-venda {
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.sem-dados {
+    text-align: center;
+    padding: 10vh;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* Sessao: Icones de Acao */
+.icones-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 20%; /* Gap responsivo */
+}
+
+.icones-acoes img {
+    width: 1.5rem; /* Usando rem para icones acompanharem o texto */
+    height: auto;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.icones-acoes img:hover {
+    transform: scale(1.2);
+}
