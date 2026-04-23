@@ -35,7 +35,7 @@ class Financeiro_Maquina_View(View):
     
 class Venda_Update_View(UpdateView):
     model = Vendas_Model
-    form_class = Vendas_Form
+    fields = ['comprovante', 'valor_venda', 'data_venda']
     template_name = 'editar_venda.html'
     
     def get_success_url(self):

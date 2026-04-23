@@ -2,59 +2,39 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'maquinas/css/financeiro_maquina.css' %}">
+    <link rel="stylesheet" href="{% static 'maquinas/css/editar_venda.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
-<main class="container-financeiro">
-    <header class="header-extrato">
-        <h1 class="format_text">Extrato: {{ maquina.nome_maquina }}</h1>
-        <div class="acoes-topo">
-            <a href="{% url 'home' %}" class="btn-voltar">Voltar</a>
-        </div>
-    </header>
+<main class="container-editar">
+    <div class="card-editar">
+        <header class="header-editar">
+            <h2 class="format_text">EDITAR LANÇAMENTO</h2>
+        </header>
 
-    <section class="secao-tabela">
-        <div class="card-extrato">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Produto</th>
-                        <th>Comprovante</th>
-                        <th>Valor</th>
-                        <th class="txt-center">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for venda in vendas %}
-                    <tr>
-                        <td>{{ venda.data_venda|date:"d/m/Y" }}</td>
-                        <td>{{ venda.produto_vendido|default:"-" }}</td>
-                        <td>{{ venda.comprovante|default:"-" }}</td>
-                        <td class="valor-venda">R$ {{ venda.valor_venda }}</td>
-                        <td class="txt-center">
-                            <div class="icones-acoes">
-                                <a href="{% url 'editar_venda' venda.pk %}" title="Editar">
-                                    <img src="{% static 'transacao/img/editar_venda.png' %}" alt="Editar">
-                                </a>
-                                <a href="javascript:void(0)" 
-                                    onclick="confirmarExclusao('{% url 'excluir_venda' venda.pk %}', '{{ venda.valor_venda|escapejs }}')" 
-                                    title="Excluir">
-                                    <img src="{% static 'transacao/img/excluir_venda.png' %}" alt="Excluir">
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    {% empty %}
-                    <tr>
-                        <td colspan="5" class="sem-dados">Nenhum lançamento para esta máquina.</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </section>
+        <form method="post" class="form-edicao">
+            {% csrf_token %}
+            
+            <div class="campo-grupo">
+                <span>Comprovante</span>
+                {{ form.comprovante }}
+            </div>
+
+            <div class="campo-grupo">
+                <span>Valor da Venda (R$)</span>
+                {{ form.valor_venda }}
+            </div>
+
+            <div class="campo-grupo">
+                <span>Data da Venda</span>
+                {{ form.data_venda }}
+            </div>
+
+            <div class="acoes-form">
+                <button type="submit" class="btn-confirmar">CONFIRMAR ALTERAÇÃO</button>
+                <a href="javascript:history.back()" class="btn-cancelar">CANCELAR</a>
+            </div>
+        </form>
+    </div>
 </main>
-<script src="{% static 'maquinas/javascript/excluir_venda_popup.js' %}"></script>
 {% endblock content %}
