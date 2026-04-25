@@ -1,4 +1,3 @@
-/* Sessao: Layout Geral */
 .container-financeiro {
     display: flex;
     flex-direction: column;
@@ -6,10 +5,11 @@
     padding: 4vh 2%;
     min-height: 85vh;
     width: 100%;
+    overflow-x: hidden;
 }
 
-/* Sessao: Cabecalho do Extrato */
 .header-extrato {
+    border-radius: 8px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
 }
 
 .header-extrato h1 {
-    color: #eae7e7 ;
+    color: #eae7e7;
     font-family: 'Arial Black', sans-serif;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -33,9 +33,9 @@
     font-size: 1.1rem;
 }
 
-/* Sessao: Tabela e Card Principal */
 .secao-tabela {
     width: 100%;
+    max-width: 100vw;
 }
 
 .card-extrato {
@@ -45,6 +45,13 @@
     border: 1px solid #ddd;
     padding: 2vh;
     width: 100%;
+    overflow: hidden;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -53,9 +60,13 @@ table {
     font-family: Arial, sans-serif;
 }
 
-th {
+th, td {
     text-align: left;
     padding: 2vh 1.5%;
+    border-bottom: 1px solid #eee;
+}
+
+th {
     border-bottom: 2px solid #575757;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -63,12 +74,13 @@ th {
 }
 
 td {
-    padding: 2vh 1.5%;
-    border-bottom: 1px solid #eee;
     font-size: 1rem;
+    white-space: nowrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Sessao: Estilos de Celula */
 .valor-venda {
     font-weight: bold;
     color: #2d2d2d;
@@ -85,20 +97,33 @@ td {
     font-size: 1.2rem;
 }
 
-/* Sessao: Icones de Acao */
 .icones-acoes {
     display: flex;
     justify-content: center;
-    gap: 20%; /* Gap responsivo */
+    gap: 15px;
 }
 
 .icones-acoes img {
-    width: 1.5rem; /* Usando rem para icones acompanharem o texto */
+    width: 1.5rem;
     height: auto;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.icones-acoes img:hover {
-    transform: scale(1.2);
+@media (max-width: 850px) {
+    .header-extrato h1 {
+        font-size: 1.1rem;
+    }
+
+    .container-financeiro {
+        padding: 15px 5px;
+    }
+
+    td {
+        max-width: 100px;
+        font-size: 0.85rem;
+    }
+
+    th {
+        font-size: 0.8rem;
+    }
 }

@@ -70,3 +70,14 @@ body header img {
 .nav-links li a:hover { background-color: #444; }
 
 #open-btn { cursor: pointer; height: 40px; }
+
+/* --- AJUSTE PARA DISPOSITIVO MÓVEL --- */
+@media (max-width: 850px) {
+    .sidebar {
+        /* Usar porcentagem garante que o recuo seja exatamente o tamanho da barra */
+        width: 70%; 
+        left: -70%; 
+        transition: 0.3s;
+        border-radius: 0; /* Sidebar cheia fica melhor no mobile */
+    }
+}

@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fecha o menu escondendo
     closeBtn.onclick = () => {
-        sidebar.style.left = '-250px';
+        sidebar.style.left = '-100%';
     };
 });

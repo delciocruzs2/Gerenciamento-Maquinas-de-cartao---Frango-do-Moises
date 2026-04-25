@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{% static 'transacao/css/lancamento.css' %}">
 {% endblock extra_css %}
 
+{% block title %} Novo Lançamento {% endblock title %}
+
 {% block content %}
 <main class="container-lancamento">
     <section class="coluna-form">
@@ -12,32 +14,38 @@
             {% csrf_token %}
             <div id="forms_maquininha">
                 <fieldset>
-                    <legend>Novo Lançamento</legend>
+                    <legend class="format_text">Novo Lançamento</legend>
                     
-                   <div class="div_valores">
+                    <div class="div_valores">
                         <span>Comprovante</span>
                         {{ form_venda.comprovante }}
                         {% if form_venda.comprovante.errors %}
-                            <p style="color: red; font-size: 0.7rem;">{{ form_venda.comprovante.errors.0 }}</p>
+                            <p class="error-text">{{ form_venda.comprovante.errors.0 }}</p>
                         {% endif %}
                     </div>
 
                     <div class="div_valores">
                         <span>Valor da Venda (R$)</span>
                         {{ form_venda.valor_venda }}
-                        {{ form_venda.valor_venda.errors }}
+                        {% if form_venda.valor_venda.errors %}
+                            <p class="error-text">{{ form_venda.valor_venda.errors.0 }}</p>
+                        {% endif %}
                     </div>
 
                     <div class="div_valores">
                         <span>Data da Venda</span>
                         {{ form_venda.data_venda }}
-                        {{ form_venda.data_venda.errors }}
+                        {% if form_venda.data_venda.errors %}
+                            <p class="error-text">{{ form_venda.data_venda.errors.0 }}</p>
+                        {% endif %}
                     </div>
 
                     <div class="div_valores">
                         <span>Maquininha Utilizada</span>
                         {{ form_venda.maquina_to_venda }}
-                        {{ form_venda.maquina_to_venda.errors }}
+                        {% if form_venda.maquina_to_venda.errors %}
+                            <p class="error-text">{{ form_venda.maquina_to_venda.errors.0 }}</p>
+                        {% endif %}
                     </div>
                 </fieldset>
 
@@ -46,7 +54,9 @@
                 </div>
 
                 <div id="botao_voltar">
-                    <a href="{% url 'home' %}"><button type="button">Cancelar</button></a>
+                    <a href="{% url 'home' %}">
+                        <button type="button">Cancelar</button>
+                    </a>
                 </div>
             </div>
         </form>
@@ -55,13 +65,14 @@
     <section class="coluna-lista">
         <div class="card-lista">
             <h2 class="titulo-lista">Últimos Lançamentos</h2>
+            
             <div class="tabela-container">
                 <table>
                     <thead>
                         <tr>
                             <th>Data</th>
                             <th>Valor</th>
-                            <th>Comprovante</th>
+                            <th>Comp.</th> 
                             <th>Máquina</th>
                         </tr>
                     </thead>
@@ -75,7 +86,7 @@
                         </tr>
                         {% empty %}
                         <tr>
-                            <td colspan="4" style="text-align: center; padding: 2vh;">Nenhuma venda registrada.</td>
+                            <td colspan="4" class="empty-row">Nenhuma venda registrada.</td>
                         </tr>
                         {% endfor %}
                     </tbody>
