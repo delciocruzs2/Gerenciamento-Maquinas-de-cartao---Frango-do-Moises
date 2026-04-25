@@ -1,0 +1,29 @@
+/* Esconde a coluna de ações recentes */
+.col-lg-3.col-12 {
+    display: none !important;
+}
+
+/* Faz a lista de tabelas ocupar a largura total */
+.col-lg-9.col-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+
+/* Força o menu superior a aparecer no celular */
+@media (max-width: 991px) {
+    .navbar-nav.ml-auto {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+    }
+    
+    .navbar-nav.ml-auto .nav-item {
+        display: block !important;
+        margin-left: 10px;
+    }
+
+    /* Ajusta o texto para não ficar em cima do nome */
+    .nav-link span {
+        font-size: 0.8rem;
+    }
+}

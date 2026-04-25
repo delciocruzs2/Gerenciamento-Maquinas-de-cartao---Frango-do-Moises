@@ -10,6 +10,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -90,3 +91,48 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Frango Moisés Admin",
+    "site_header": "Frango do Moisés",
+    "site_brand": "Frango Moisés",
+    "site_logo": "app/img/logo_admin.png",
+    "welcome_sign": "Administrador da aplicação Frango do Moisés",
+    "copyright": "Moisés Ltda",
+    "show_sidebar": True,
+    "show_ui_builder": False,
+    "changeform_format": "horizontal_tabs",
+    "navigation_expanded": True,
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "maquinas.maquinas_model": "fas fa-credit-card",
+        "transacao.vendas_model": "fas fa-shopping-cart",
+    },
+    "topmenu_links": [
+        # Link para Voltar (ou outra página específica)
+        {"name": "Sair do Admin", "url": "/"},
+    ],
+    # A configuração específica para esconder o log de ações da home:
+    "hide_models": ["auth.Group"],
+
+    "custom_css": "app/css/custom_admin.css",
+
+    "usermenu_links": [
+        {"name": "Sair do Admin", "url": "/", "icon": "fas fa-sign-out-alt"},
+    ],
+
+    "sidebar_nav_child_indent": True,
+    "custom_links": {
+        "app": [
+            {
+                "name": "Sair do Admin",
+                "url": "/",
+                "icon": "fas fa-sign-out-alt",
+                "permissions": ["auth.view_user"]
+            },
+        ],
+    },
+    
+}

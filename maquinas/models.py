@@ -12,3 +12,7 @@ class Maquinas_Model(models.Model):
 
     def __str__(self) -> str:
         return self.nome_maquina
+    
+    class Meta:
+        verbose_name = "Máquininha"
+        verbose_name_plural = "Máquininhas"

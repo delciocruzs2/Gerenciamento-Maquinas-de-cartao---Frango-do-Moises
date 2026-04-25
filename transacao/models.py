@@ -9,4 +9,8 @@ class Vendas_Model(models.Model):
     comprovante = models.CharField(max_length=100, unique=True, null=True, blank=True)
     maquina_to_venda = models.ForeignKey(Maquinas_Model, on_delete=models.CASCADE,
                                          related_name='vendas', null=False, blank=False)
+    
+    class Meta:
+        verbose_name = "Lançamento"
+        verbose_name_plural = "Lançamentos"
 
