@@ -24,9 +24,9 @@
                     {{ form_adicionar.nome_maquina }}
                 </div>
                 <div class="div_valores">
-                    <span>Valor limite</span>
-                    {{ form_adicionar.valor_limite }}
-                    {{ form_adicionar.valor_limite.errors }}
+                    <span>Valor limite anual</span>
+                    {{ form_adicionar.valor_limite_anual }}
+                    {{ form_adicionar.valor_limite_anual.errors }}
                 </div>
                 <div class="div_valores">
                     <span>Data de vencimento</span>
@@ -47,7 +47,6 @@
                 </a>
             </div>
         </section>
-        
     </form>
 </main>
 <script src="{% static 'maquinas/javascript/mostrar_imagem.js' %}"></script>

@@ -56,8 +56,6 @@ main nav ul li a span {
     color: black;
 }
 
-/* CSS DE CARDS*/
-
 .container_maquinas {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +65,6 @@ main nav ul li a span {
     min-height: 65vh;
 }
 
-/* O card de cada maquininha */
 .card_maquina {
     background-color: white;
     border-radius: 12px;
@@ -79,7 +76,7 @@ main nav ul li a span {
 }
 
 .card_maquina:hover {
-    transform: translateY(-10px); /* Efeito de flutuar ao passar o mouse */
+    transform: translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -100,7 +97,7 @@ main nav ul li a span {
 }
 
 .info_card {
-    padding: 4vh;
+    padding: 2vh;
     text-align: center;
 }
 
@@ -119,15 +116,15 @@ main nav ul li a span {
 }
 
 #opcao_gerenciamento {
-    border-top: 1px solid #eee; /* Uma linha fina para separar do conteúdo acima */
+    border-top: 1px solid #eee;
     padding: 1vh 0;
-    background-color: #f9f9f9; /* Um fundo levemente diferente para destacar a base */
+    background-color: #f9f9f9;
 }
 
 #opcao_gerenciamento ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; /* Distribui Editar e Excluir */
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     list-style: none;
@@ -147,9 +144,8 @@ main nav ul li a span {
     transform: scale(1.1);
 }
 
-/* AQUI ESTÁ O SEGREDO DO TAMANHO */
 #opcao_gerenciamento ul li a img {
-    width: 30px;  /* Ajuste esse valor conforme o seu gosto */
+    width: 30px;
     height: 30px;
     object-fit: contain;
     margin-bottom: 5px;

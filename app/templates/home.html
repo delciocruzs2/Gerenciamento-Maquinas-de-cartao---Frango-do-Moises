@@ -21,33 +21,56 @@
             <div class="card-info">
                 <h2 class="format_text">{{ m.nome_maquina }}</h2>
                 
-                <div class="valores-grid">
+                <div class="valores-grid mensal-3">
                     <div class="v-box">
-                        <span>LIMITE:</span>
-                        <strong>R$ {{ m.valor_limite|floatformat:2 }}</strong>
+                        <span>LIMITE MENSAL:</span>
+                        <strong>R$ {{ m.valor_limite_calculado|floatformat:2 }}</strong>
                     </div>
                     <div class="v-box">
                         <span>LANÇADOS:</span>
                         <strong>R$ {{ m.total_gasto|floatformat:2 }}</strong>
                     </div>
-                    <div class="v-box disponivel">
-                        <span>DISPONÍVEL ANTES DE CHEGAR AO LIMITE:</span>
+                    <div class="v-box">
+                        <span>DISPONÍVEL:</span>
                         <strong class="{% if m.valor_disponivel < 0 %}txt-vermelho{% else %}txt-verde{% endif %}">
                             R$ {{ m.valor_disponivel|floatformat:2 }}
                         </strong>
                     </div>
                 </div>
 
-                <div class="progresso-wrapper">
-                    <div class="barra-trilho">
-                        <div class="barra-nivel" 
-                             style="width: {{ m.porcentagem_barra|stringformat:'.2f' }}%; background-color: {{ m.cor_barra }};">
-                        </div>
+                <div class="barra-trilho">
+                    <div class="barra-nivel" 
+                         style="width: {{ m.porcentagem_barra|stringformat:'.2f' }}%; background-color: {{ m.cor_barra }};">
                     </div>
-                    <div class="progresso-legenda">
-                        <p>Vencimento: {{ m.vencimento_completo }}</p>
-                        <span>{{ m.porcentagem|floatformat:0 }}%</span>
+                </div>
+                <div class="progresso-legenda">
+                    <p>Vencimento: {{ m.vencimento_completo }}</p>
+                    <span>{{ m.porcentagem|floatformat:0 }}%</span>
+                </div>
+
+                <hr class="divisor">
+
+                <div class="valores-grid anual-2">
+                    <div class="v-box">
+                        <span>LIMITE ANUAL:</span>
+                        <strong>R$ {{ m.valor_limite_anual|floatformat:2 }}</strong>
                     </div>
+                    <div class="v-box">
+                        <span>DISPONÍVEL (ANO):</span>
+                        <strong class="{% if m.disponivel_anual < 0 %}txt-vermelho{% else %}txt-verde{% endif %}">
+                            R$ {{ m.disponivel_anual|floatformat:2 }}
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="barra-trilho">
+                    <div class="barra-nivel" 
+                         style="width: {{ m.porcentagem_anual_barra|stringformat:'.2f' }}%; background-color: #28a745;">
+                    </div>
+                </div>
+                <div class="progresso-legenda">
+                    <p>Ciclo: Janeiro a Dezembro</p>
+                    <span>{{ m.porcentagem_anual|floatformat:0 }}%</span>
                 </div>
             </div>
 

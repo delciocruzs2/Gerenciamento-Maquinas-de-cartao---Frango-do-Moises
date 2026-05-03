@@ -4,7 +4,7 @@ from maquinas.models import *
 
 @admin.register(Maquinas_Model)
 class Maquinas_Admin(admin.ModelAdmin):
-    list_display = ('id_maquina', 'exibir_foto', 'nome_maquina', 'valor_limite')
+    list_display = ('id_maquina', 'exibir_foto', 'nome_maquina', 'valor_limite_anual', 'valor_limite')
     search_fields = ('nome_maquina',)
     list_filter = ('nome_maquina',)
 

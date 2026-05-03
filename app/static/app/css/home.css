@@ -11,7 +11,7 @@
 
 .card-maquina {
     background: #fff;
-    width: 320px;
+    width: 420px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
@@ -41,27 +41,29 @@
 
 .valores-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 1.5vh;
     margin-bottom: 2vh;
 }
 
+.mensal-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.anual-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
 .v-box span {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #999;
     display: block;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .v-box strong {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #333;
-}
-
-.disponivel {
-    grid-column: span 2;
-    border-top: 1px dotted #eee;
-    padding-top: 1vh;
 }
 
 .txt-verde {
@@ -93,6 +95,12 @@
     font-weight: bold;
     color: #666;
     margin-top: 1vh;
+}
+
+.divisor {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 2vh 0;
 }
 
 .card-links {
